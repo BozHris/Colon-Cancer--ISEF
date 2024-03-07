@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Imaging - ColoDetect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/survey">Survey</a>
+        <a href="/about">About</a>
+   </div
+
+    <!-- Create a form for image upload -->
+   <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="centered-form">
+       <div class="file-input-container">
+           <label for="file" class="custom-button">Choose Image</label>
+           <input type="file" name="file" id="file" class="file-input" accept="image/*">
+       </div>
+       <div id="image-preview">
+           <img id="selected-image" src="" alt="Selected Image">
+       </div>
+       <button type="submit" class="custom-button">Upload</button>
+   </form>
+
+<script>
+    // Function to handle image selection
+    function handleImageSelect(event) {
+        const input = event.target;
+        const preview = document.getElementById('selected-image');
+
+        const file = input.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                // Set the source of the image to the selected file
+                preview.src = e.target.result;
+            };
+
+            // Read the file as a data URL
+            reader.readAsDataURL(file);
+        }
+    }
+
+    // Attach the function to the change event of the file input
+    document.getElementById('file').addEventListener('change', handleImageSelect);
+</script>
+
+</body>
+</html>

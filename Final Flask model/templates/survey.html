@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Survey - ColoDetect</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   <div class="navbar">
+       <a href="/">Home</a>
+       <!-- <a href="/survey">Survey</a> -->
+       <a href="/imaging">Imaging</a>
+       <a href="/about">About</a>
+   </div>
+   <div class="container">
+       <form action="/calculate_risk" method="post">
+       <div class="card">
+           <div class="form-group">
+               <label for="age">What is your current age?</label>
+               <input type="number" id="age" name="age">
+           </div>
+       </div>
+
+       <div class="container">
+           <form action="/calculate_risk" method="post">
+           <div class="card">
+               <div class="form-group">
+                   <label for="diet">What is your bmi?</label>
+                   <input type="number" id="bmi" name="bmi">
+               </div>
+           </div>
+       </div>
+
+       <div class="container">
+           <form action="/calculate_risk" method="post">
+           <div class="card">
+               <div class="form-group">
+                   <label for="diet">How many years have you been smoking?</label>
+                   <input type="number" id="smoking" name="smoking">
+               </div>
+           </div>
+       </div>
+
+       <div class="container">
+           <form action="/calculate_risk" method="post">
+           <div class="card">
+               <div class="form-group">
+                   <label for="diet">On a scale of 0-6.How often do you eat vegetables with 6 being every day</label>
+                   <input type="number" id="diet" name="diet">
+               </div>
+           </div>
+       </div>
+
+       <div class="container">
+           <form action="/calculate_risk" method="post">
+           <div class="card">
+               <div class="form-group">
+                   <label for="diet">On a scale of 0-5.How many servings?</label>
+                   <input type="number" id="diet_servings" name="diet_servings">
+               </div>
+           </div>
+       </div>
+
+       <div class="container">
+           <form action="/calculate_risk" method="post">
+           <div class="card">
+               <div class="form-group">
+                   <label for="activity">How many months a year do you exersise?</label>
+                   <input type="number" id="activity" name="activity">
+               </div>
+           </div>
+       </div>
+
+       <div class="container">
+           <form action="/calculate_risk" method="post">
+           <div class="card">
+               <div class="form-group">
+                   <label for="activity">How many hours per day do you exercise?</label>
+                   <input type="number" id="activity_daily" name="activity_daily">
+               </div>
+           </div>
+       </div>
+
+       <div class="card">
+           <div class="form-group">
+               <label>Have you had colonoscopy or was diagnosed with polyps in the past?</label>
+               <label class="radio-label"><input type="radio" name="colonoscopy" value="yes"> Yes</label>
+               <label class="radio-label"><input type="radio" name="colonoscopy" value="no"> No</label>
+           </div>
+       </div>
+
+
+       <div class="card">
+           <div class="form-group">
+               <label>How many family members have had colon cancer in the past?</label>
+               <label class="radio-label"><input type="radio" name="genetics" value="zero"> Zero</label>
+               <label class="radio-label"><input type="radio" name="genetics" value="one"> One</label>
+               <label class="radio-label"><input type="radio" name="genetics" value="two"> Two or more</label>
+           </div>
+       </div>
+
+
+
+
+
+
+
+       <button type="submit">Calculate Risk</button>
+   </form>
+   </div>
+
+</body>
+</html>
+
